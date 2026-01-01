@@ -7,6 +7,8 @@
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,12 +16,13 @@
     <EmbeddedResource Remove="References\**" />
     <None Remove="References\**" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.Core" Version="5.*" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <PackageReference Include="UnityEngine.Modules" Version="2019.4.39" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
+    <PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+	<PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
+    <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
@@ -28,19 +31,25 @@
   
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\..\SPT Assembly Refs\39x\0Harmony.dll</HintPath>
+      <HintPath>C:\eftst\EFT311\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\SPT Assembly Refs\39x\Assembly-CSharp.dll</HintPath>
+      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>C:\eftst\EFT311\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Comfort">
-      <HintPath>..\..\SPT Assembly Refs\39x\Comfort.dll</HintPath>
+      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Cecil">
-      <HintPath>..\..\SPT Assembly Refs\39x\Mono.Cecil.dll</HintPath>
+      <HintPath>C:\eftst\EFT311\BepInEx\core\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="spt-reflection">
-      <HintPath>..\..\SPT Assembly Refs\39x\spt-reflection.dll</HintPath>
+      <HintPath>C:\eftst\EFT311\BepInEx\plugins\spt\spt-reflection.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
