@@ -12,19 +12,14 @@ namespace MaskBreathVolume
     [BepInPlugin("ciallo.MaskBreathVolume", "Mask Faceshield Breath Volume", "2.0.0")]
     public class MainPlugin : BaseUnityPlugin
     {
-        internal static ManualLogSource LogSource;
         internal static ConfigEntry<int> Volume;
-
         internal static EPhraseTrigger LastTrigger;
-        internal static TaggedClip LastClip;
 
         private void Awake()
         {
-            LogSource = Logger;
-
             Volume = Config.Bind(
                 "General",
-                "BreathVolumePercent",
+                "Volume Percent",
                 40,
                 new ConfigDescription("0 - 100", new AcceptableValueRange<int>(0, 100))
             );
@@ -49,7 +44,6 @@ namespace MaskBreathVolume
                 return;
 
             MainPlugin.LastTrigger = @event;
-            MainPlugin.LastClip = clip;
         }
     }
 
@@ -71,7 +65,6 @@ namespace MaskBreathVolume
             if (clip == null)
                 return;
 
-            float before = clip.Volume;
             float factor = MainPlugin.Volume.Value * 0.01f;
             clip.Volume = factor;
         }
