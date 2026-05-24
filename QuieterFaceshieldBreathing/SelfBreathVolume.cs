@@ -1,6 +1,5 @@
 ﻿using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.Logging;
 using Comfort.Common;
 using EFT;
 using HarmonyLib;
@@ -74,6 +73,10 @@ namespace SelfBreathVolume
                 case EPhraseTrigger.HurtMedium:
                 case EPhraseTrigger.HurtHeavy:
                 case EPhraseTrigger.HurtNearDeath:
+                case EPhraseTrigger.Hit:
+                case EPhraseTrigger.OnAgony:
+                case EPhraseTrigger.OnBeingHurt:
+                case EPhraseTrigger.OnBeingHurtDissapoinment:
                     break; // 允许继续执行
                 default:
                     return; // 其他情况直接退出
