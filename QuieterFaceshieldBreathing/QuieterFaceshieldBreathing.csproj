@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net471</TargetFramework>
-    <AssemblyName>Arys-QuieterFaceshieldBreathing</AssemblyName>
+    <AssemblyName>SelfBreathVolume</AssemblyName>
     <Description>Configurable faceshield breathing volume</Description>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -16,40 +16,103 @@
     <EmbeddedResource Remove="References\**" />
     <None Remove="References\**" />
   </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="BepInEx.Analyzers" Version="1.0.8" PrivateAssets="all" />
-    <PackageReference Include="BepInEx.BaseLib" Version="5.4.21" />
-    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
-	<PackageReference Include="BepInEx.PluginInfoProps" Version="1.1.0" />
-    <PackageReference Include="UnityEngine.Modules" Version="2021.3.33" IncludeAssets="compile" />
-  </ItemGroup>
-  
-  <ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2" PrivateAssets="all" />
-  </ItemGroup>
-  
+
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>C:\eftst\EFT311\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>D:\EFT408\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>C:\eftst\EFT311\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>D:\EFT408\BepInEx\core\BepInEx.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Comfort">
-      <HintPath>C:\eftst\EFT311\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Mono.Cecil">
-      <HintPath>C:\eftst\EFT311\BepInEx\core\Mono.Cecil.dll</HintPath>
+    <Reference Include="Comfort.Unity">
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\Comfort.Unity.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="spt-reflection">
-      <HintPath>C:\eftst\EFT311\BepInEx\plugins\spt\spt-reflection.dll</HintPath>
+      <HintPath>D:\EFT408\BepInEx\plugins\spt\spt-reflection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\EFT408\EscapeFromTarkov_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="mscorlib">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Core">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Data">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Drawing">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.IO.Compression.FileSystem">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Numerics">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Runtime.Serialization">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Xml">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Update="System.Xml.Linq">
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
 </Project>

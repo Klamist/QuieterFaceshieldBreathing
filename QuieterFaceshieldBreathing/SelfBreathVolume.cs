@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace SelfBreathVolume
 {
-    [BepInPlugin("ciallo.selfbreathvolume", "Self Breath Volume", "2.0.0")]
+    [BepInPlugin("ciallo.selfbreathvolume", "Self Breath Volume", "1.1")]
     public class MainPlugin : BaseUnityPlugin
     {
         internal static ConfigEntry<int> Volume;
@@ -60,10 +60,24 @@ namespace SelfBreathVolume
         {
             if (__instance != Singleton<GameWorld>.Instance.MainPlayer)
                 return;
-            if (MainPlugin.LastTrigger != EPhraseTrigger.OnBreath)
-                return;
             if (clip == null)
                 return;
+
+            switch (MainPlugin.LastTrigger)
+            {
+                case EPhraseTrigger.OnBreath:
+                case EPhraseTrigger.LegBroken:
+                case EPhraseTrigger.Bleeding:
+                case EPhraseTrigger.Dehydrated:
+                case EPhraseTrigger.Exhausted:
+                case EPhraseTrigger.HurtLight:
+                case EPhraseTrigger.HurtMedium:
+                case EPhraseTrigger.HurtHeavy:
+                case EPhraseTrigger.HurtNearDeath:
+                    break; // 允许继续执行
+                default:
+                    return; // 其他情况直接退出
+            }
 
             float factor = MainPlugin.Volume.Value * 0.01f;
             clip.Volume = factor;
