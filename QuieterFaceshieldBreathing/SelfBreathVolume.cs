@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace SelfBreathVolume
 {
-    [BepInPlugin("ciallo.selfbreathvolume", "Self Breath Volume", "1.1")]
+    [BepInPlugin("ciallo.selfbreathvolume", "Self Breath Volume", "1.2.0")]
     public class MainPlugin : BaseUnityPlugin
     {
         internal static ConfigEntry<int> Volume;
